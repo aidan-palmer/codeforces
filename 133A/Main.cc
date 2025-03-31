@@ -3,7 +3,7 @@ using namespace std;
 
 bool contains(string p) {
     for (char c : p) {
-        if (c == 'H' || c == 'Q' || c == '9' || c == '+') {
+        if (c == 'H' || c == 'Q' || c == '9') {
             return true;
         }
     }
