@@ -1,0 +1,4 @@
+#!/bin/bash
+# Run ./new <directory-name> to setup a new directory with skeleton files
+mkdir $1
+cp -r skeleton/. $1
