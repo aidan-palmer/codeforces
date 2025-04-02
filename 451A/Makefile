@@ -9,4 +9,4 @@ clean:
 	rm -f Main *.o
 
 dbg:
-	gdb -q ./Main
+	gdb -q --args ./Main example.txt
