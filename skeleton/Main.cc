@@ -2,8 +2,11 @@
 using namespace std;
 
 int main(void) {
-    int n;
-    cin >> n;
+    int t, n, i, j;
+    cin >> t;
+    for (i = 0; i < t; i++) {
+        cin >> n;
+    }
 
     return 0;
 }
