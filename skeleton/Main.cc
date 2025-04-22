@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#define endn '\n'
+#define ll int64_t
 using namespace std;
 
 int main() {
