@@ -1,41 +1,32 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-
-uint64_t fact(int x) {
-    uint64_t result = 1;
-    for (int i = 2; i <= x; i++) {
-        result *= i;
-    }
-    return result;
-}
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int t, n, i, j, k, q, l;
+    int64_t t, n, i, j, k, q;
     cin >> t;
-    int results[t];
+    int64_t results[t];
     for (i = 0; i < t; i++) {
         cin >> n >> k >> q;
         int a[n];
         for (j = 0; j < n; j++) {
             cin >> a[j];
         }
-        vector<int> dates;
-        j = 0, l = 0;
-        while (j < n) {
-            if (a[j] > q) {
-                dates.push_back(j - l);
-                l = j + 1;
+        int64_t len = 0;
+        int64_t total = 0;
+        for (j = 0; j < n; j++) {
+            if (a[j] <= q) {
+                len++;
+            } else {
+                if (len >= k) {
+                    total += (len - k + 1) * (len - k + 2) / 2;
+                }
+                len = 0;
             }
-            j++;
         }
-        uint64_t total = 0;
-        for (int s : dates) {
-            if (s >= k) {
-                total += fact(s);
-            }
+        if (len >= k) {
+            total += (len - k + 1) * (len - k + 2) / 2;
         }
         results[i] = total;
     }
@@ -46,5 +37,5 @@ int main() {
 }
 
 /**
- * getting some wrong answers
+ * Need to get better at combinatorics--struggled with this one.
  */
