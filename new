@@ -1,4 +1,6 @@
 #!/bin/bash
 # Run ./new <directory-name> to setup a new directory with skeleton files
-mkdir $1
-cp -r skeleton/. $1
+for dir in "$@"; do
+    mkdir -p "$dir"
+    cp -r skeleton/. "$dir"
+done
